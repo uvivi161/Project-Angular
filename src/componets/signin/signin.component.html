@@ -38,10 +38,11 @@
   
             <mat-form-field appearance="outline" class="full-width">
               <mat-label>role</mat-label>
-              <mat-select formControlName="role">
+              <input matInput type="text" formControlName="role" placeholder="Enter your role">
+              <!-- <mat-select formControlName="role">
                 <mat-option value="student">תלמיד</mat-option>
                 <mat-option value="teacher">מורה</mat-option>
-              </mat-select>
+              </mat-select> -->
               <mat-icon matSuffix>badge</mat-icon>
               @if(signInForm.get('role')?.invalid && signInForm.get('role')?.touched) {
                 <mat-error>Role is required</mat-error>
