@@ -1,0 +1,86 @@
+/* הגדרות כלליות */
+.add-course-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #0000;
+  background-color: rgb(69, 145, 170);
+}
+
+/* עיצוב כפתורים */
+button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 20px;
+  background-color: rgb(29, 120, 156); /* צבע כחול כהה */
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(50, 150, 180); /* צבע כחול בהיר יותר בעת ריחוף */
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* עיצוב הטפסים */
+form {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-top: 1rem;
+}
+
+/* שדות קלט */
+input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+input:focus {
+  border-color: rgb(29, 120, 156);
+  outline: none;
+}
+
+/* עיצוב שדות עם תיאור */
+label {
+  display: block;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+/* עיצוב כותרות כרטיס */
+mat-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+mat-card-header {
+  margin-bottom: 1rem;
+}
+
+mat-card-title {
+  color: rgb(29, 120, 156);
+  font-weight: 500;
+  text-align: center;
+}
+
+/* עיצוב כרטיס עבור טפסים */
+mat-card-actions {
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}

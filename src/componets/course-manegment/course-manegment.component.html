@@ -1,0 +1,104 @@
+<div class="course-management-container">
+    <!-- כפתורים לניהול קורסים ושיעורים -->
+    <button (click)="addCourse()">Add course</button>
+    <button (click)="updateCourse()">Update course</button>
+    <button (click)="deleteCourse()">Delete course</button>
+    <button (click)="addLesson()">Add lesson to course</button>
+    <button (click)="updateLesson()">Update lesson in course</button>
+    <button (click)="deleteLesson()">Delete lesson from course</button>
+
+    <!-- טופס להוספת או עדכון קורס -->
+    @if (addcourse || updatecourse) {
+      <form [formGroup]="courseForm" (ngSubmit)="addcourse ? onAdd() : onUpdate()">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Course Details</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <label for="courseName">Course Name:</label>
+            <input type="text" id="courseName" formControlName="title" placeholder="Course Name">
+
+            <label for="courseDescription">Course Description:</label>
+            <input id="courseDescription" formControlName="description" placeholder="Course Description" />
+
+            @if (updatecourse) {
+              <label for="courseId">Course Id:</label>
+              <input type="text" formControlName="id" placeholder="Course Id" />
+            }
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit" [disabled]="courseForm.invalid">Submit</button>
+            <button mat-button type="button" (click)="addcourse = false; updatecourse = false">Cancel</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+    }
+
+    <!-- טופס למחיקת קורס -->
+    @if (deletecourse) {
+      <form [formGroup]="deleteForm" (ngSubmit)="onDelete()">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Delete Course</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <label for="courseId">Course Id:</label>
+            <input type="text" formControlName="id" placeholder="Course Id" />
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="warn" type="submit">Delete</button>
+            <button mat-button type="button" (click)="deletecourse = false">Cancel</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+    }
+
+    <!-- טופס להוספת או עדכון שיעור -->
+    @if (addlesson || updatelesson) {
+      <form [formGroup]="lessonForm" (ngSubmit)="addlesson ? onAddLesson() : onUpdateLesson()">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Lesson Details</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <label for="lessonName">Lesson Name:</label>
+            <input type="text" id="lessonName" formControlName="title" placeholder="Lesson Name">
+
+            <label for="lessonContent">Lesson Content:</label>
+            <input id="lessonContent" formControlName="content" placeholder="Lesson Content" />
+
+            <label for="courseId">Course Id:</label>
+            <input type="text" formControlName="courseId" placeholder="Course Id" />
+
+            @if (updatelesson) {
+              <label for="lessonId">Lesson Id:</label>
+              <input type="text" formControlName="id" placeholder="Lesson Id" />
+            }
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit" [disabled]="lessonForm.invalid">Submit</button>
+            <button mat-button type="button" (click)="addlesson = false; updatelesson = false">Cancel</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+    }
+
+    <!-- טופס למחיקת שיעור -->
+    @if (deletelesson) {
+      <form [formGroup]="deleteLessonForm" (ngSubmit)="onDeleteLesson()">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Delete Lesson</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <label for="lessonId">Lesson Id:</label>
+            <input type="text" formControlName="id" placeholder="Lesson Id" />
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="warn" type="submit">Delete</button>
+            <button mat-button type="button" (click)="deletelesson = false">Cancel</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+    }
+</div>

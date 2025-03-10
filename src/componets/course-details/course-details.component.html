@@ -1,0 +1,26 @@
+<div class="course-details-container">
+    <mat-card class="course-card">
+      <mat-card-header>
+        <mat-card-title>{{ course.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ course.description }}</p>
+  
+        @if (lessons) {
+          <h3 class="lesson-title">Lessons:</h3>
+          <mat-list>
+            @for (lesson of lessons; track lesson.id) {
+              <mat-list-item class="lesson-item">
+                <span class="lesson-text">{{ lesson.title }} - {{ lesson.content }}</span>
+              </mat-list-item>
+              <mat-divider></mat-divider>
+            }
+            @empty {
+              <mat-list-item class="lesson-item">No available lessons</mat-list-item>
+            }
+          </mat-list>
+        }
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

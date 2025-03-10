@@ -1,0 +1,61 @@
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    padding: 20px;
+    /* background: url('/assets/background.jpg') no-repeat center center; */
+    /* background-size: cover; */
+  }
+  
+  .course-card {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    backdrop-filter: blur(10px); 
+  }
+  
+  mat-card-title {
+    color: #3949ab; 
+    font-weight: bold;
+  }
+  
+  mat-card-content p {
+    color: #444; 
+  }
+  
+  mat-card-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* עיצוב הכפתורים */
+  button {
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  
+  button[color="primary"] {
+    background-color: #3949ab;
+    color: white;
+  }
+  
+  button[color="accent"] {
+    background-color: #ffca28; 
+    color: black;
+  }
+  
+  button[color="warn"] {
+    background-color: #e57373; 
+    color: white;
+  }
+  
+  button:hover {
+    opacity: 0.85;
+  }
+  
